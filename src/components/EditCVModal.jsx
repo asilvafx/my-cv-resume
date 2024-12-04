@@ -280,6 +280,9 @@ const EditCVModal = ({ isOpen, onClose, cvData, onSave }) => {
                 <div className="flex flex-col gap-1 mb-3">
                     <label>Description:</label>
                     <textarea
+                        cols="5"
+                        rows="5"
+                        className="w-full"
                         name="description"
                         value={formData.profile.description}
                         onChange={handleProfileChange}
@@ -334,14 +337,20 @@ const EditCVModal = ({ isOpen, onClose, cvData, onSave }) => {
                 {/* Skills */}
                 <h3 className="text-lg font-semibold mt-4">Skills</h3>
                 {formData.skills.map((skillCategory, index) => (
-                    <div key={index} className="mb-3">
-                        <h4 className="font-semibold cursor-pointer" onClick={() => toggleSkill(index)}>
-                            Skill Category {index + 1} {expandedSkills.includes(index) ? '-' : '+'}
-                        </h4>
+                    <div key={index} className="mb-3 border p-2 rounded-md">
+                        <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSkill(index)}>
+                            <h4 className="font-semibold">
+                                Skill Category {index + 1}
+                            </h4>
+                            <span>
+                                {expandedSkills.includes(index) ? '-' : '+'}
+                            </span>
+                        </div>
+
                         {expandedSkills.includes(index) && (
-                            <div className="ml-4">
-                                <div className="flex flex-col gap-1">
-                                    <label>Title:</label>
+                            <div className="m-0">
+                                <div className="flex flex-col gap-1 mb-2">
+                                <label>Title:</label>
                                     <input
                                         type="text"
                                         value={skillCategory.title}
@@ -352,7 +361,7 @@ const EditCVModal = ({ isOpen, onClose, cvData, onSave }) => {
                                         }}
                                     />
                                 </div>
-                                <div className="flex flex-col gap-1">
+                                <div className="flex flex-col gap-1 mb-2">
                                     <label>Tags (comma separated):</label>
                                     <input
                                         type="text"
@@ -364,14 +373,14 @@ const EditCVModal = ({ isOpen, onClose, cvData, onSave }) => {
                                         }}
                                     />
                                 </div>
-                                <button onClick={() => removeSkillCategory(index)} className="text-red-500">Remove Skill
-                                    Category
+                                <button onClick={() => removeSkillCategory(index)} className="w-full text-red-500 px-2 py-1 text-sm rounded-md">
+                                    Remove Skill
                                 </button>
                             </div>
                         )}
                     </div>
                 ))}
-                <button onClick={addSkillCategory} className="bg-green-500 text-white py-1 px-2 rounded">Add Skill
+                <button onClick={addSkillCategory} className="w-full bg-green-500 text-white py-1 px-2 rounded-md">Add Skill
                     Category
                 </button>
 
@@ -388,6 +397,9 @@ const EditCVModal = ({ isOpen, onClose, cvData, onSave }) => {
                 {/* Projects */}
                 <h3 className="text-lg font-semibold mt-4">Projects</h3>
                 <textarea
+                    cols="5"
+                    rows="5"
+                    className="w-full"
                     value={formData.projects.join('\n')}
                     onChange={handleProjectsChange}
                     placeholder="Enter each project on a new line"
@@ -396,21 +408,27 @@ const EditCVModal = ({ isOpen, onClose, cvData, onSave }) => {
                 {/* Experience */}
                 <h3 className="text-lg font-semibold mt-4">Experience</h3>
                 {formData.experience.map((job, index) => (
-                    <div key={index} className="mb-3">
-                        <h4 className="font-semibold cursor-pointer" onClick={() => toggleExperience(index)}>
-                            Job {index + 1} {expandedExperience.includes(index) ? '-' : '+'}
-                        </h4>
+                    <div key={index} className="mb-3 border p-2 rounded-md">
+                        <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleExperience(index)}>
+                            <h4 className="font-semibold">
+                                Job {index + 1}
+                            </h4>
+                            <span>
+                                 {expandedExperience.includes(index) ? '-' : '+'}
+                            </span>
+                        </div>
+
                         {expandedExperience.includes(index) && (
-                            <div className="ml-4">
-                                <div className="flex flex-col gap-1">
-                                    <label>Period:</label>
+                            <div className="m-0">
+                                <div className="flex flex-col gap-1 mb-2">
+                                <label>Period:</label>
                                     <input
                                         type="text"
                                         value={job.period}
                                         onChange={(e) => handleExperienceChange(index, 'period', e.target.value)}
                                     />
                                 </div>
-                                <div className="flex flex-col gap-1">
+                                <div className="flex flex-col gap-1 mb-2">
                                     <label>Title:</label>
                                     <input
                                         type="text"
@@ -418,7 +436,7 @@ const EditCVModal = ({ isOpen, onClose, cvData, onSave }) => {
                                         onChange={(e) => handleExperienceChange(index, 'title', e.target.value)}
                                     />
                                 </div>
-                                <div className="flex flex-col gap-1">
+                                <div className="flex flex-col gap-1 mb-2">
                                     <label>Company:</label>
                                     <input
                                         type="text"
@@ -426,39 +444,50 @@ const EditCVModal = ({ isOpen, onClose, cvData, onSave }) => {
                                         onChange={(e) => handleExperienceChange(index, 'company', e.target.value)}
                                     />
                                 </div>
-                                <div className="flex flex-col gap-1">
+                                <div className="flex flex-col gap-1 mb-2">
                                     <label>Responsibilities (comma separated):</label>
                                     <textarea
+                                        rows="3"
+                                        cols="3"
+                                        className="w-full"
                                         value={job.responsibilities.join(', ')}
                                         onChange={(e) => handleExperienceChange(index, 'responsibilities', e.target.value.split(',').map(res => res.trim()))}
                                     />
                                 </div>
-                                <button onClick={() => removeExperience(index)} className="text-red-500">Remove</button>
+                                <button onClick={() => removeExperience(index)} className="w-full text-red-500 px-2 py-1 text-sm rounded-md">Remove</button>
                             </div>
                         )}
                     </div>
                 ))}
-                <button onClick={addExperience} className="bg-green-500 text-white py-1 px-2 rounded">Add Experience
+                <button onClick={addExperience} className="w-full bg-green-500 text-white py-1 px-2 rounded-md">Add Experience
                 </button>
 
                 {/* Education */}
                 <h3 className="text-lg font-semibold mt-4">Education</h3>
                 {formData.education.map((edu, index) => (
-                    <div key={index} className="mb-3">
-                        <h4 className="font-semibold cursor-pointer" onClick={() => toggleEducation(index)}>
-                            Education {index + 1} {expandedEducation.includes(index) ? '-' : '+'}
-                        </h4>
+                    <div key={index} className="mb-3 p-2 border rounded-md">
+
+                        <div className="flex justify-between items-center cursor-pointer"
+                             onClick={() => toggleEducation(index)}>
+                            <h4 className="font-semibold">
+                                Education {index + 1}
+                            </h4>
+                            <span>
+                                {expandedEducation.includes(index) ? '-' : '+'}
+                            </span>
+                        </div>
+
                         {expandedEducation.includes(index) && (
-                            <div className="ml-4">
-                                <div className="flex flex-col gap-1">
-                                    <label>Period:</label>
+                            <div className="m-0">
+                                <div className="flex flex-col gap-1 mb-2">
+                                <label>Period:</label>
                                     <input
                                         type="text"
                                         value={edu.period}
                                         onChange={(e) => handleEducationChange(index, 'period', e.target.value)}
                                     />
                                 </div>
-                                <div className="flex flex-col gap-1">
+                                <div className="flex flex-col gap-1 mb-2">
                                     <label>Title:</label>
                                     <input
                                         type="text"
@@ -466,7 +495,7 @@ const EditCVModal = ({ isOpen, onClose, cvData, onSave }) => {
                                         onChange={(e) => handleEducationChange(index, 'title', e.target.value)}
                                     />
                                 </div>
-                                <div className="flex flex-col gap-1">
+                                <div className="flex flex-col gap-1 mb-2">
                                     <label>Institution:</label>
                                     <input
                                         type="text"
@@ -474,118 +503,128 @@ const EditCVModal = ({ isOpen, onClose, cvData, onSave }) => {
                                         onChange={(e) => handleEducationChange(index, 'institution', e.target.value)}
                                     />
                                 </div>
-                                <div className="flex flex-col gap-1">
+                                <div className="flex flex-col gap-1 mb-2">
                                     <label>Details (comma separated):</label>
                                     <textarea
+                                        rows="3"
+                                        cols="3"
+                                        className="w-full"
                                         value={edu.details.join(', ')}
                                         onChange={(e) => handleEducationChange(index, 'details', e.target.value.split(',').map(detail => detail.trim()))}
                                     />
                                 </div>
-                                <button onClick={() => removeEducation(index)} className="text-red-500">Remove</button>
+                                <button onClick={() => removeEducation(index)} className="w-full text-red-500 px-2 py-1 text-sm rounded-md">Remove</button>
                             </div>
                         )}
                     </div>
                 ))}
-                <button onClick={addEducation} className="bg-green-500 text-white py-1 px-2 rounded">Add Education
+                <button onClick={addEducation} className="w-full bg-green-500 text-white py-1 px-2 rounded-md">Add Education
                 </button>
 
                 {/* Certifications */}
                 <h3 className="text-lg font-semibold mt-4">Certifications</h3>
                 {formData.certifications.map((cert, index) => (
-                    <div key={index} className="mb-3">
-                        <h4 className="font-semibold cursor-pointer" onClick={() => toggleCertification(index)}>
-                            Certification {index + 1} {expandedCertifications.includes(index) ? '-' : '+'}
-                        </h4>
+                    <div key={index} className="mb-3 p-2 border rounded-md">
+                        <div className="flex justify-between items-center cursor-pointer"
+                             onClick={() => toggleCertification(index)}>
+                            <h4 className="font-semibold">
+                                Certification {index + 1}
+                            </h4>
+                            <span>
+                               {expandedCertifications.includes(index) ? '-' : '+'}
+                            </span>
+                        </div>
+
                         {expandedCertifications.includes(index) && (
-                            <div className="ml-4">
-                                <div className="flex flex-col gap-1">
-                                    <label>Year:</label>
-                                    <input
-                                        type="text"
-                                        value={cert.year}
-                                        onChange={(e) => handleCertificationChange(index, 'year', e.target.value)}
-                                    />
+                            <div className="m-0">
+                                <div className="flex flex-col gap-1 mb-2">
+                                <label>Year:</label>
+                                        <input
+                                            type="text"
+                                            value={cert.year}
+                                            onChange={(e) => handleCertificationChange(index, 'year', e.target.value)}
+                                        />
+                                    </div>
+                                    <div className="flex flex-col gap-1 mb-2">
+                                        <label>Title:</label>
+                                        <input
+                                            type="text"
+                                            value={cert.title}
+                                            onChange={(e) => handleCertificationChange(index, 'title', e.target.value)}
+                                        />
+                                    </div>
+                                    <div className="flex flex-col gap-1 mb-2">
+                                        <label>Institution:</label>
+                                        <input
+                                            type="text"
+                                            value={cert.institution}
+                                            onChange={(e) => handleCertificationChange(index, 'institution', e.target.value)}
+                                        />
+                                    </div>
+                                    <button onClick={() => removeCertification(index)} className="w-full text-red-500 px-2 py-1 text-sm rounded-md">Remove
+                                    </button>
                                 </div>
-                                <div className="flex flex-col gap-1">
-                                    <label>Title:</label>
-                                    <input
-                                        type="text"
-                                        value={cert.title}
-                                        onChange={(e) => handleCertificationChange(index, 'title', e.target.value)}
-                                    />
-                                </div>
-                                <div className="flex flex-col gap-1">
-                                    <label>Institution:</label>
-                                    <input
-                                        type="text"
-                                        value={cert.institution}
-                                        onChange={(e) => handleCertificationChange(index, 'institution', e.target.value)}
-                                    />
-                                </div>
-                                <button onClick={() => removeCertification(index)} className="text-red-500">Remove
-                                </button>
-                            </div>
-                        )}
+                            )}
+                        </div>
+                        ))}
+                        <button onClick={addCertification} className="w-full bg-green-500 text-white py-1 px-2 rounded-md">Add
+                            Certification
+                        </button>
+
+                        {/* Footer Links */}
+                        <h3 className="text-lg font-semibold mt-4">Footer Links</h3>
+                        <div className="flex flex-col gap-1 mb-3">
+                            <label>Link 1:</label>
+                            <input
+                                type="text"
+                                value={formData.footer.one}
+                                onChange={(e) => {
+                                    setFormData((prevData) => ({
+                                        ...prevData,
+                                        footer: {
+                                            ...prevData.footer,
+                                            one: e.target.value,
+                                        },
+                                    }));
+                                }}
+                            />
+                        </div>
+                        <div className="flex flex-col gap-1 mb-3">
+                            <label>Link 2:</label>
+                            <input
+                                type="text"
+                                value={formData.footer.two}
+                                onChange={(e) => {
+                                    setFormData((prevData) => ({
+                                        ...prevData,
+                                        footer: {
+                                            ...prevData.footer,
+                                            two: e.target.value,
+                                        },
+                                    }));
+                                }}
+                            />
+                        </div>
+                        <div className="flex flex-col gap-1 mb-3">
+                            <label>Link 3:</label>
+                            <input
+                                type="text"
+                                value={formData.footer.three}
+                                onChange={(e) => {
+                                    setFormData((prevData) => ({
+                                        ...prevData,
+                                        footer: {
+                                            ...prevData.footer,
+                                            three: e.target.value,
+                                        },
+                                    }));
+                                }}
+                            />
+                        </div>
                     </div>
-                ))}
-                <button onClick={addCertification} className="bg-green-500 text-white py-1 px-2 rounded">Add
-                    Certification
-                </button>
 
-                {/* Footer Links */}
-                <h3 className="text-lg font-semibold mt-4">Footer Links</h3>
-                <div className="flex flex-col gap-1 mb-3">
-                    <label>Link 1:</label>
-                    <input
-                        type="text"
-                        value={formData.footer.one}
-                        onChange={(e) => {
-                            setFormData((prevData) => ({
-                                ...prevData,
-                                footer: {
-                                    ...prevData.footer,
-                                    one: e.target.value,
-                                },
-                            }));
-                        }}
-                    />
-                </div>
-                <div className="flex flex-col gap-1 mb-3">
-                    <label>Link 2:</label>
-                    <input
-                        type="text"
-                        value={formData.footer.two}
-                        onChange={(e) => {
-                            setFormData((prevData) => ({
-                                ...prevData,
-                                footer: {
-                                    ...prevData.footer,
-                                    two: e.target.value,
-                                },
-                            }));
-                        }}
-                    />
-                </div>
-                <div className="flex flex-col gap-1 mb-3">
-                    <label>Link 3:</label>
-                    <input
-                        type="text"
-                        value={formData.footer.three}
-                        onChange={(e) => {
-                            setFormData((prevData) => ({
-                                ...prevData,
-                                footer: {
-                                    ...prevData.footer,
-                                    three: e.target.value,
-                                },
-                            }));
-                        }}
-                    />
-                </div>
-            </div>
-
-            <div className="modal-footer flex flex-wrap gap-2 items-center">
-                    {/* Save and Cancel Buttons */}
+                    <div className="modal-footer flex flex-wrap gap-2 items-center">
+                {/* Save and Cancel Buttons */}
                     <button onClick={handleSave} className="bg-blue-500 text-white py-2 px-4 rounded">
                         Save
                     </button>
