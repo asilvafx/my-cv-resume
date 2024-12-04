@@ -1,0 +1,137 @@
+{
+  "personalInfo": {
+    "name": "Antonio Macedo",
+    "title": "DÉVELOPPEUR WEB (FRONTEND & BACKEND)",
+    "phone": "+33 610 291 986",
+    "email": "asilva@outlook.com.au",
+    "address": "10, Place de la Republique, 44100 - Nantes (France)",
+    "photo": "https://placehold.co/100x100"
+  },
+  "profile": {
+    "description": "Je suis un professionnel de l'informatique motivé et polyvalent, spécialisé en PHP et JavaScript pour le développement front-end et back-end. Mon expertise inclut la cybersécurité, le Web3 (intégration de la blockchain), l'intelligence artificielle et l'apprentissage automatique, ainsi que les protocoles de sécurité web tels que CORS et JWT. Reconnu pour mon solide sens du travail et ma capacité à travailler sous pression, j'ai fait mes preuves en fournissant des solutions web innovantes qui améliorent la performance des entreprises.",
+    "birthDate": "01/10/1992",
+    "birthPlace": "Braga, Portugal",
+    "nationality": "Portugais",
+    "drivingLicense": "Permis complet (B2)",
+    "languages": ["Anglais", "Espagnol", "Français"]
+  },
+  "skills": [
+    {
+      "title": "Programing Languages",
+      "tags": [
+        "PHP", "JavaScript", "C++", "HTML", "CSS"
+      ]
+    },
+    {
+      "title": "Frameworks",
+      "tags": [
+        "Node.js", "Webpack", "Axios", "Laravel", "Tailwind", "React (beginner)"
+      ]
+    },
+    {
+      "title": "CMS",
+      "tags": [
+        "WordPress", "Prestashop", "OpenCart", "WooCommerce"
+      ]
+    },
+    {
+      "title": "Design",
+      "tags": [
+        "Figma", "Adobe Photoshop", "Adobe XD & Other Adobe Soft."
+      ]
+    },
+    {
+      "title": "Operative Systems",
+      "tags": [
+        "macOS", "Windows (Apache)", "Linux (Nginx)"
+      ]
+    },
+    {
+      "title": "Databases",
+      "tags": [
+        "MySQL", "SQLite", "Firebase NoSQL (Realtime Database), AWS (DynamoDB)"
+      ]
+    }
+  ],
+  "additionalExpertise": "Cybersécurité, Web3 (intégration de la blockchain), IA et apprentissage automatique, CORS (Partage des Ressources entre Origines), JWT (JSON Web Tokens)",
+  "projects": [
+    "Développement d'un site en PHP et JavaScript avec intégration de MySQL et du paiement Stripe.",
+    "Création d'un site web responsive pour une startup, optimisé pour une expérience utilisateur multi-appareils.",
+    "Développement de sites WordPress, Laravel ou d'un CMS personnalisé pour améliorer l'administration et les fonctionnalités.",
+    "Intégration de mesures de sécurité avancées pour protéger les applications web.",
+    "Création de d'Apps pour l'intégration de la blockchain (Web3), des services et des API REST-20 personnalisées.",
+    "Utilisation de techniques d'intelligence artificielle et de l'apprentissage automatique pour automatiser des tâches, gérer les fichiers chronologiques, analyser des données et créer des chatbots."
+  ],
+  "experience": [
+    {
+      "period": "2015 - 2020",
+      "title": "Responsable",
+      "company": "Highlands Hotel (Melbourne, Australia)",
+      "responsibilities": [
+        "Gestion des opérations, en veillant à la qualité et à la performance.",
+        "Gestion des plaintes des clients, gestion des fonds, planification des équipes et formation.",
+        "Exécution de rôles dans divers départements, maintien de la morale de l'équipe et garantie de la satisfaction des clients."
+      ]
+    },
+    {
+      "period": "2014 - 2015",
+      "title": "Coordinateur de Marque",
+      "company": "Samsung by SELPLUS (Braga, Portugal)",
+      "responsibilities": [
+        "Gestion de la coordination de la marque, des ventes et du merchandising."
+      ]
+    },
+    {
+      "period": "2013 - 2014",
+      "title": "Coordinateur des Ventes Régionales",
+      "company": "Sagres by SELPLUS (Northern Portugal)",
+      "responsibilities": [
+        "Supervision des ventes, du merchandising et du marketing."
+      ]
+    },
+    {
+      "period": "2009 - 2010",
+      "title": "Développeur Web / Analyste E-commerce",
+      "company": "Emporium (Famalicão, Portugal)",
+      "responsibilities": [
+        "Maintenance et codage du site web, évaluation des produits et gestion de l'eCMS."
+      ]
+    },
+    {
+      "period": "2008 - 2009",
+      "title": "Technicien IT",
+      "company": "Empis Lda (Braga, Portugal)",
+      "responsibilities": [
+        "Réparation des systèmes et réseaux informatiques, gestion des problèmes hardware et software."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "period": "2015 - 2018",
+      "title": "Diploma of Business",
+      "institution": "Lonsdale Institute (Melbourne, Australia)",
+      "details": [
+        "Gérer la qualité du service client",
+        "Gérer les processus de recrutement, de sélection et d'intégration",
+        "Gérer des programmes visant à promouvoir l'efficacité personnelle",
+        "Gérer la performance des collaborateurs",
+        "Identifier et évaluer les opportunités marketing",
+        "Réaliser des travaux de projet",
+        "Gérer les risques"
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "year": "2024",
+      "title": "AWS Planning a Generative AI Project",
+      "institution": "Amazon (Online)"
+    }
+  ],
+  "footer": {
+    "one": "linkedin.com/asilvabrg",
+    "two": "github.com/asilvafx",
+    "three": "codepen.io/asilvafx"
+  }
+}

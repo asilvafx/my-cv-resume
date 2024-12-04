@@ -1,0 +1,102 @@
+
+@media print {
+
+    body {
+        margin: 0;
+        padding: 20px;
+        font-family: 'Roboto', sans-serif;
+        color: #333;
+    }
+
+    .max-w-6xl {
+        max-width: none; /* Remove max-width for printing */
+    }
+
+    header {
+        display: none; /* Hide the header in print */
+    }
+
+    footer {
+        display: none; /* Hide the footer in print */
+    }
+
+    h1, h2, h3 {
+        margin: 0;
+        padding: 0;
+        page-break-after: avoid; /* Prevent page breaks after headings */
+    }
+
+    p, ul {
+        margin: 0;
+        padding: 0;
+        line-height: 1.5; /* Improve readability */
+    }
+
+    ul {
+        list-style-position: inside; /* Adjust list style */
+    }
+
+    .text-gray-600 {
+        color: #555; /* Darken text for print */
+    }
+
+    .text-blue-600 {
+        color: #007bff; /* Change link color for print */
+    }
+
+    .shadow-sm, .shadow-md, .shadow-lg {
+        box-shadow: none !important; /* Remove shadow */
+    }
+
+    /* Add any additional styles you want for print here */
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure the modal is above other content */
+}
+
+.modal {
+    border-radius: 8px;
+    width: 500px; /* Set a width for the modal */
+    max-height: 80vh; /* Limit the height of the modal */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Prevent overflow of the modal */
+}
+
+.modal-header {
+    padding: 16px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-body {
+    padding: 16px;
+    overflow-y: auto; /* Enable vertical scrolling */
+    flex-grow: 1; /* Allow the body to grow and take available space */
+}
+
+.modal-footer {
+    padding: 16px;
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: flex-end; /* Align footer buttons to the right */
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
