@@ -1,4 +1,4 @@
-# Vite React Boilerplate
+# Instant CV/Resume Online Builder
 
 A lightweight, production-ready boilerplate for React projects built on Vite. This setup includes essential dependencies for modern web development, such as Axios for API requests, i18n for internationalization, and React Router for route management. Includes Tailwind CSS for styling, Flowbite for Better UI UX, ESLint for code quality, and support for environment variables.
 
@@ -18,6 +18,6 @@ A lightweight, production-ready boilerplate for React projects built on Vite. Th
 
 1. **Clone & Install the repository**
    ```bash
-   git clone https://github.com/asilvafx/vite-react-boilerplate.git
-   cd vite-react-boilerplate
+   git clone https://github.com/asilvafx/my-cv-resume.git
+   cd my-cv-resume
    npm install
