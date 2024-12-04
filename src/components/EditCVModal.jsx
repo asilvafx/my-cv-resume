@@ -116,7 +116,12 @@ const EditCVModal = ({ isOpen, onClose, cvData, onSave }) => {
         // Update the photo URL in formData
         formData.personalInfo.photo = imagePreview || formData.personalInfo.photo;
         onSave(formData); // Pass the updated data back to the parent
+        // Scroll to the top of the page
         onClose(); // Close the modal
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Optional: adds a smooth scrolling effect
+        });
     };
 
     // Expand/Collapse functionality
