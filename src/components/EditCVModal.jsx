@@ -4,7 +4,6 @@ const EditCVModal = ({ isOpen, onClose, cvData, onSave }) => {
     const [formData, setFormData] = useState(cvData);
     const [imagePreview, setImagePreview] = useState(null);
     const [expandedSkills, setExpandedSkills] = useState([]); // State for toggling skills
-
     // Update formData whenever cvData changes
     useEffect(() => {
         setFormData(cvData);
