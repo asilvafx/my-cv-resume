@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Tabs } from "flowbite-react";
 
 const EditCVModal = ({ isOpen, onClose, cvData, onSave }) => {
     const [formData, setFormData] = useState(cvData);
@@ -28,6 +29,18 @@ const EditCVModal = ({ isOpen, onClose, cvData, onSave }) => {
             profile: {
                 ...prevData.profile,
                 [name]: value,
+            },
+        }));
+    };
+
+// Update the handleSkillsChange function to handle languages
+    const handleLanguagesChange = (e) => {
+        const { value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            profile: {
+                ...prevData.profile,
+                languages: value.split(',').map(lang => lang.trim()), // Split by comma and trim spaces
             },
         }));
     };
@@ -207,7 +220,9 @@ const EditCVModal = ({ isOpen, onClose, cvData, onSave }) => {
     };
 
     const handleReset = () => {
-        localStorage.removeItem('cvData'); // Clean local storage
+        // Clean local storage
+        localStorage.removeItem('cvData');
+        localStorage.removeItem('cvImage');
         window.location.reload();
     }
 
@@ -217,127 +232,131 @@ const EditCVModal = ({ isOpen, onClose, cvData, onSave }) => {
         <div className="modal-overlay">
             <div className="modal bg-white">
                 <div className="modal-body">
-                <h2 className="text-xl mb-4">Edit CV</h2>
+                    <Tabs aria-label="Tabs with underline" variant="underline">
+                        <Tabs.Item active title="Personal Information">
 
-                {/* Image Upload */}
-                <div className="flex flex-col gap-1 mb-3">
-                    <label>Upload Image:</label>
-                    <input
-                        type="file"
-                        accept="image/*"
-                        onChange={handleImageUpload}
-                    />
-                    {imagePreview && <img src={imagePreview} alt="Preview" className="mt-2 w-32 h-32 object-cover"/>}
-                </div>
+                            {/* Image Upload */}
+                            <div className="flex flex-col gap-1 mb-3">
+                                <label>Upload Image:</label>
+                                <input
+                                    type="file"
+                                    accept="image/*"
+                                    onChange={handleImageUpload}
+                                />
+                                {imagePreview && <img src={imagePreview} alt="Preview" className="mt-2 w-32 h-32 object-cover"/>}
+                            </div>
 
-                {/* Personal Info */}
-                <h3 className="text-lg font-semibold">Personal Information</h3>
-                <div className="flex flex-col gap-1 mb-3">
-                    <label>Name:</label>
-                    <input
-                        type="text"
-                        name="name"
-                        value={formData.personalInfo.name}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className="flex flex-col gap-1 mb-3">
-                    <label>Title:</label>
-                    <input
-                        type="text"
-                        name="title"
-                        value={formData.personalInfo.title}
-                        onChange={handleChange}
-                    />
-                </div>
-                <div className="flex flex-col gap-1 mb-3">
-                    <label>Phone:</label>
-                    <input
-                        type="text"
-                        name="phone"
-                        value={formData.personalInfo.phone}
-                        onChange={handleChange}
-                    />
-                </div>
-                <div className="flex flex-col gap-1 mb-3">
-                    <label>Email:</label>
-                    <input
-                        type="email"
-                        name="email"
-                        value={formData.personalInfo.email}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className="flex flex-col gap-1 mb-3">
-                    <label>Address:</label>
-                    <input
-                        type="text"
-                        name="address"
-                        value={formData.personalInfo.address}
-                        onChange={handleChange}
-                    />
-                </div>
+                            {/* Personal Info */}
+                            <div className="flex flex-col gap-1 mb-3">
+                                <label>Name:</label>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    value={formData.personalInfo.name}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+                            <div className="flex flex-col gap-1 mb-3">
+                                <label>Title:</label>
+                                <input
+                                    type="text"
+                                    name="title"
+                                    value={formData.personalInfo.title}
+                                    onChange={handleChange}
+                                />
+                            </div>
+                            <div className="flex flex-col gap-1 mb-3">
+                                <label>Phone:</label>
+                                <input
+                                    type="text"
+                                    name="phone"
+                                    value={formData.personalInfo.phone}
+                                    onChange={handleChange}
+                                />
+                            </div>
+                            <div className="flex flex-col gap-1 mb-3">
+                                <label>Email:</label>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    value={formData.personalInfo.email}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+                            <div className="flex flex-col gap-1 mb-3">
+                                <label>Address:</label>
+                                <input
+                                    type="text"
+                                    name="address"
+                                    value={formData.personalInfo.address}
+                                    onChange={handleChange}
+                                />
+                            </div>
 
-                {/* Profile Info */}
-                <h3 className="text-lg font-semibold mt-4">Profile</h3>
-                <div className="flex flex-col gap-1 mb-3">
-                    <label>Description:</label>
-                    <textarea
-                        cols="5"
-                        rows="5"
-                        className="w-full"
-                        name="description"
-                        value={formData.profile.description}
-                        onChange={handleProfileChange}
-                    />
-                </div>
-                <div className="flex flex-col gap-1 mb-3">
-                    <label>Birth Date:</label>
-                    <input
-                        type="text"
-                        name="birthDate"
-                        value={formData.profile.birthDate}
-                        onChange={handleProfileChange}
-                    />
-                </div>
-                <div className="flex flex-col gap-1 mb-3">
-                    <label>Birth Place:</label>
-                    <input
-                        type="text"
-                        name="birthPlace"
-                        value={formData.profile.birthPlace}
-                        onChange={handleProfileChange}
-                    />
-                </div>
-                <div className="flex flex-col gap-1 mb-3">
-                    <label>Nationality:</label>
-                    <input
-                        type="text"
-                        name="nationality"
-                        value={formData.profile.nationality}
-                        onChange={handleProfileChange}
-                    />
-                </div>
-                <div className="flex flex-col gap-1 mb-3">
-                    <label>Driving License:</label>
-                    <input
-                        type="text"
-                        name="drivingLicense"
-                        value={formData.profile.drivingLicense}
-                        onChange={handleProfileChange}
-                    />
-                </div>
-                <div className="flex flex-col gap-1 mb-3">
-                    <label>Languages (comma separated):</label>
-                    <input
-                        type="text"
-                        name="languages"
-                        value={formData.profile.languages.join(', ')}
-                        onChange={handleSkillsChange}
-                    />
-                </div>
+                        </Tabs.Item>
+
+                        <Tabs.Item active title="Profile">
+                            {/* Profile Info */}
+                            <div className="flex flex-col gap-1 mb-3">
+                                <label>Profile Bio:</label>
+                                <textarea
+                                    cols="5"
+                                    rows="5"
+                                    className="w-full"
+                                    name="description"
+                                    value={formData.profile.description}
+                                    onChange={handleProfileChange}
+                                />
+                            </div>
+                            <div className="flex flex-col gap-1 mb-3">
+                                <label>Birth Date:</label>
+                                <input
+                                    type="text"
+                                    name="birthDate"
+                                    value={formData.profile.birthDate}
+                                    onChange={handleProfileChange}
+                                />
+                            </div>
+                            <div className="flex flex-col gap-1 mb-3">
+                                <label>Birth Place:</label>
+                                <input
+                                    type="text"
+                                    name="birthPlace"
+                                    value={formData.profile.birthPlace}
+                                    onChange={handleProfileChange}
+                                />
+                            </div>
+                            <div className="flex flex-col gap-1 mb-3">
+                                <label>Nationality:</label>
+                                <input
+                                    type="text"
+                                    name="nationality"
+                                    value={formData.profile.nationality}
+                                    onChange={handleProfileChange}
+                                />
+                            </div>
+                            <div className="flex flex-col gap-1 mb-3">
+                                <label>Driving License:</label>
+                                <input
+                                    type="text"
+                                    name="drivingLicense"
+                                    value={formData.profile.drivingLicense}
+                                    onChange={handleProfileChange}
+                                />
+                            </div>
+                            <div className="flex flex-col gap-1 mb-3">
+                                <label>Languages (comma separated):</label>
+                                <input
+                                    type="text"
+                                    name="languages"
+                                    value={formData.profile.languages.join(', ')}
+                                    onChange={handleLanguagesChange}
+                                />
+                            </div>
+                        </Tabs.Item>
+                    </Tabs>
 
                 {/* Skills */}
                 <h3 className="text-lg font-semibold mt-4">Skills</h3>

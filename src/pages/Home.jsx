@@ -40,7 +40,8 @@ const Home = () => {
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
         <style>
             body {
-                font-family: 'Roboto', sans-serif;
+                font-family: 'Roboto', sans-serif; 
+                font-size: 13px !important;
             }
             section {
                 margin-bottom: 2rem;

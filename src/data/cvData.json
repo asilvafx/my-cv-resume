@@ -5,7 +5,7 @@
     "phone": "+33 610 291 986",
     "email": "asilva@outlook.com.au",
     "address": "10, Place de la Republique, 44100 - Nantes (France)",
-    "photo": "https://placehold.co/100x100"
+    "photo": ""
   },
   "profile": {
     "description": "Je suis un professionnel de l'informatique motivé et polyvalent, spécialisé en PHP et JavaScript pour le développement front-end et back-end. Mon expertise inclut la cybersécurité, le Web3 (intégration de la blockchain), l'intelligence artificielle et l'apprentissage automatique, ainsi que les protocoles de sécurité web tels que CORS et JWT. Reconnu pour mon solide sens du travail et ma capacité à travailler sous pression, j'ai fait mes preuves en fournissant des solutions web innovantes qui améliorent la performance des entreprises.",
@@ -13,7 +13,7 @@
     "birthPlace": "Braga, Portugal",
     "nationality": "Portugais",
     "drivingLicense": "Permis complet (B2)",
-    "languages": ["Anglais", "Espagnol", "Français"]
+    "languages": ["Anglais", "Espagnol", "Français", "Portugais"]
   },
   "skills": [
     {
@@ -25,7 +25,7 @@
     {
       "title": "Frameworks",
       "tags": [
-        "Node.js", "Webpack", "Axios", "Laravel", "Tailwind", "React (beginner)"
+        "Node.js", "Webpack", "Axios", "Laravel", "Tailwind CSS", "React"
       ]
     },
     {
@@ -53,16 +53,26 @@
       ]
     }
   ],
-  "additionalExpertise": "Cybersécurité, Web3 (intégration de la blockchain), IA et apprentissage automatique, CORS (Partage des Ressources entre Origines), JWT (JSON Web Tokens)",
+  "additionalExpertise": "Cybersécurité, Web3 (intégration de la blockchain), IA et apprentissage automatique, CORS (Partage Sécuriser des Ressources entre Origines), JWT (JSON Web Tokens)",
   "projects": [
     "Développement d'un site en PHP et JavaScript avec intégration de MySQL et du paiement Stripe.",
     "Création d'un site web responsive pour une startup, optimisé pour une expérience utilisateur multi-appareils.",
     "Développement de sites WordPress, Laravel ou d'un CMS personnalisé pour améliorer l'administration et les fonctionnalités.",
     "Intégration de mesures de sécurité avancées pour protéger les applications web.",
-    "Création de d'Apps pour l'intégration de la blockchain (Web3), des services et des API REST-20 personnalisées.",
+    "Création de dApps pour l'intégration de la blockchain (Web3), des services et des token ERC-20.",
     "Utilisation de techniques d'intelligence artificielle et de l'apprentissage automatique pour automatiser des tâches, gérer les fichiers chronologiques, analyser des données et créer des chatbots."
   ],
   "experience": [
+    {
+      "period": "2022 - 2024",
+      "title": "Web Developer",
+      "company": "PIGMIL (Nantes, France)",
+      "responsibilities": [
+        "Création de Web Apps, sites, and scripts",
+        "Gestion des clients, gestion des réseaux sociaux, marketing and seo.",
+        "Google Firebase Services"
+      ]
+    },
     {
       "period": "2015 - 2020",
       "title": "Responsable",
@@ -130,7 +140,7 @@
     }
   ],
   "footer": {
-    "one": "linkedin.com/asilvabrg",
+    "one": "linkedin.com/in/asilvabrg",
     "two": "github.com/asilvafx",
     "three": "codepen.io/asilvafx"
   }
