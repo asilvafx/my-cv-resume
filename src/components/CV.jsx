@@ -140,7 +140,7 @@ const CV = ({data}) => {
                 ))}
             </section>
             <footer className="text-center">
-                <p className="text-gray-500 font-bold text-sm">
+                <p className="footer-links text-gray-500 font-bold">
                     {data.footer.one} | {data.footer.two} | {data.footer.three}
                 </p>
             </footer>

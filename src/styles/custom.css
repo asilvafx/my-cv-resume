@@ -1,6 +1,6 @@
 
 @media print {
-    
+
     body {
         margin: 0;
         padding: 20px;
@@ -99,4 +99,7 @@
     border: none;
     font-size: 24px;
     cursor: pointer;
+}
+.footer-links {
+    font-size: 11px;
 }

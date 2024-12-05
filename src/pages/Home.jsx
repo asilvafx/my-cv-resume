@@ -46,6 +46,9 @@ const Home = () => {
             section {
                 margin-bottom: 2rem;
             }
+            .footer-links {
+                font-size: 11px;
+            }
         </style>
         </head>
         <body>
