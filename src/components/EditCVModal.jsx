@@ -62,7 +62,7 @@ const EditCVModal = ({ isOpen, onClose, cvData, onSave }) => {
             return newExpanded;
         });
     };
-
+ 
     const handleProjectsChange = (e) => {
         const { value } = e.target;
         setFormData((prevData) => ({
